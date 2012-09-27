@@ -211,7 +211,7 @@ class JsonProperty(db.UnindexedProperty):
 
 
 
-_FUTURE_TIME = 2**34
+_FUTURE_TIME = 2L**34
 
 
 def _get_descending_key(gettime=time.time):

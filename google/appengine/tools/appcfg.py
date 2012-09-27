@@ -1352,7 +1352,7 @@ def IsPacificDST(now):
   return begin <= now < end
 
 
-def CopyReversedLines(instream, outstream, blocksize=2**16):
+def CopyReversedLines(instream, outstream, blocksize=2L**16):
   r"""Copy lines from input stream to output stream in reverse order.
 
   As a special feature, null bytes in the input are turned into
@@ -1390,7 +1390,7 @@ def CopyReversedLines(instream, outstream, blocksize=2**16):
   return line_count
 
 
-def FindSentinel(filename, blocksize=2**16):
+def FindSentinel(filename, blocksize=2L**16):
   """Return the sentinel line from the output file.
 
   Args:

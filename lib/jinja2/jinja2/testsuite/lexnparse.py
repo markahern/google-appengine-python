@@ -219,7 +219,7 @@ class SyntaxTestCase(JinjaTestCase):
         assert tmpl.render() == '()|(1,)|(1, 2)'
 
     def test_math(self):
-        tmpl = env.from_string('{{ (1 + 1 * 2) - 3 / 2 }}|{{ 2**3 }}')
+        tmpl = env.from_string('{{ (1 + 1 * 2) - 3 / 2 }}|{{ 2L**3 }}')
         assert tmpl.render() == '1.5|8'
 
     def test_div(self):

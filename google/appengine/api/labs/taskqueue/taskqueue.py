@@ -342,7 +342,7 @@ class TaskRetryOptions(object):
       max_doublings: The maximum number of times that the interval between
         failed task retries will be doubled before the increase becomes
         constant. The constant will be:
-        2**(max_doublings - 1) * min_backoff_seconds. (optional)
+        2L**(max_doublings - 1) * min_backoff_seconds. (optional)
       task_retry_limit: The maximum number of times to retry a failed task
         before giving up. If task_age_limit is specified then the task will be
         retried until both limits are reached. (optional)

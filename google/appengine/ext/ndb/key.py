@@ -59,7 +59,7 @@ Other constraints:
   long (after UTF-8 encoding, if given as Python unicode objects).
   NOTE: This is defined as a module level constant _MAX_KEYPART_BYTES.
 
-- Integer ids must be at least 1 and less than 2**63.
+- Integer ids must be at least 1 and less than 2L**63.
 
 For more info about namespaces, see
 http://code.google.com/appengine/docs/python/multitenancy/overview.html.

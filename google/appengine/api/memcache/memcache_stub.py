@@ -317,7 +317,7 @@ class MemcacheServiceStub(apiproxy_stub.APIProxyStub):
       delta = -delta
 
 
-    new_value = max(old_value + delta, 0) % (2**64)
+    new_value = max(old_value + delta, 0) % (2L**64)
 
     entry.value = str(new_value)
     return new_value

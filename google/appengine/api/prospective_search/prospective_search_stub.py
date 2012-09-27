@@ -257,7 +257,7 @@ class ProspectiveSearchStub(apiproxy_stub.APIProxyStub):
       if prop.value().has_int64value():
         value = prop.value().int64value()
 
-        if (value < 2**32) and (value >= -2**32):
+        if (value < 2L**32) and (value >= -2L**32):
           doc[prop_name].append(prop.value().int64value())
       elif prop.value().has_stringvalue():
 

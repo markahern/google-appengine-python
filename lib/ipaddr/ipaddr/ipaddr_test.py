@@ -64,9 +64,9 @@ class IpaddrUnitTest(unittest.TestCase):
                          ipaddr.IPv4Address('1.1.2.0'))
         self.assertEqual(ipaddr.IPv4Address('1.1.1.1') - 256,
                          ipaddr.IPv4Address('1.1.0.1'))
-        self.assertEqual(ipaddr.IPv6Address('::1') + (2**16 - 2),
+        self.assertEqual(ipaddr.IPv6Address('::1') + (2L**16 - 2),
                          ipaddr.IPv6Address('::ffff'))
-        self.assertEqual(ipaddr.IPv6Address('::ffff') - (2**16 - 2),
+        self.assertEqual(ipaddr.IPv6Address('::ffff') - (2L**16 - 2),
                          ipaddr.IPv6Address('::1'))
 
     def testInvalidStrings(self):
@@ -218,7 +218,7 @@ class IpaddrUnitTest(unittest.TestCase):
     def testIpFromInt(self):
         self.assertEqual(self.ipv4.ip, ipaddr.IPv4Network(16909060).ip)
         self.assertRaises(ipaddr.AddressValueError,
-                          ipaddr.IPv4Network, 2**32)
+                          ipaddr.IPv4Network, 2L**32)
         self.assertRaises(ipaddr.AddressValueError,
                           ipaddr.IPv4Network, -1)
 
@@ -230,7 +230,7 @@ class IpaddrUnitTest(unittest.TestCase):
         v6_int = 42540616829182469433547762482097946625
         self.assertEqual(self.ipv6.ip, ipaddr.IPv6Network(v6_int).ip)
         self.assertRaises(ipaddr.AddressValueError,
-                          ipaddr.IPv6Network, 2**128)
+                          ipaddr.IPv6Network, 2L**128)
         self.assertRaises(ipaddr.AddressValueError,
                           ipaddr.IPv6Network, -1)
 
@@ -825,7 +825,7 @@ class IpaddrUnitTest(unittest.TestCase):
     def testReservedIpv6(self):
 
         self.assertEqual(True, ipaddr.IPNetwork('ffff::').is_multicast)
-        self.assertEqual(True, ipaddr.IPNetwork(2**128-1).is_multicast)
+        self.assertEqual(True, ipaddr.IPNetwork(2L**128-1).is_multicast)
         self.assertEqual(True, ipaddr.IPNetwork('ff00::').is_multicast)
         self.assertEqual(False, ipaddr.IPNetwork('fdff::').is_multicast)
 
@@ -857,7 +857,7 @@ class IpaddrUnitTest(unittest.TestCase):
 
         # test addresses
         self.assertEqual(True, ipaddr.IPAddress('ffff::').is_multicast)
-        self.assertEqual(True, ipaddr.IPAddress(2**128-1).is_multicast)
+        self.assertEqual(True, ipaddr.IPAddress(2L**128-1).is_multicast)
         self.assertEqual(True, ipaddr.IPAddress('ff00::').is_multicast)
         self.assertEqual(False, ipaddr.IPAddress('fdff::').is_multicast)
 

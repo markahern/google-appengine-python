@@ -333,8 +333,8 @@ class Context(object):
       self.shard_id = None
 
     self.mutation_pool = MutationPool(
-        max_pool_size=(MAX_POOL_SIZE/(2**self.task_retry_count)),
-        max_entity_count=(MAX_ENTITY_COUNT/(2**self.task_retry_count)),
+        max_pool_size=(MAX_POOL_SIZE/(2L**self.task_retry_count)),
+        max_entity_count=(MAX_ENTITY_COUNT/(2L**self.task_retry_count)),
         mapreduce_spec=mapreduce_spec)
     self.counters = Counters(shard_state)
 

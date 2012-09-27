@@ -190,7 +190,7 @@ class DatabaseOperations(BaseDatabaseOperations):
         return 'MATCH (%s) AGAINST (%%s IN BOOLEAN MODE)' % field_name
 
     def no_limit_value(self):
-        # 2**64 - 1, as recommended by the MySQL documentation
+        # 2L**64 - 1, as recommended by the MySQL documentation
         return 18446744073709551615L
 
     def quote_name(self, name):

@@ -43,7 +43,7 @@ from google.appengine.runtime import apiproxy_errors
 
 
 LOG_NAMESPACE = '_Logs'
-_FUTURE_TIME = 2**34
+_FUTURE_TIME = 2L**34
 _REQUEST_TIME = 0
 _CURRENT_REQUEST_ID_HASH = ''
 

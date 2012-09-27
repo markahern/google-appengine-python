@@ -102,7 +102,7 @@ EVENTUAL_CONSISTENCY = datastore_rpc.Configuration.EVENTUAL_CONSISTENCY
 
 
 
-_MAX_INT_32 = 2**31-1
+_MAX_INT_32 = 2L**31-1
 
 
 def NormalizeAndTypeCheck(arg, types):

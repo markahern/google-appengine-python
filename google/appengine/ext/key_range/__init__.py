@@ -700,7 +700,7 @@ class KeyRange(object):
 
       zero_ch = unichr(0)
       if id_or_name2 == zero_ch:
-        return (id_or_name1 + 2**63 - 1) / 2
+        return (id_or_name1 + 2L**63 - 1) / 2
       return zero_ch
 
   @staticmethod
@@ -760,7 +760,7 @@ class KeyRange(object):
         full_path[index] = u"\xffff"
       else:
 
-        full_path[index] = 2**63 - 1
+        full_path[index] = 2L**63 - 1
 
     key_end = db.Key.from_path(*full_path,
                                **{"_app": app, "namespace": namespace})

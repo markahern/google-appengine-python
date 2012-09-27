@@ -39,7 +39,7 @@ _QUOTA_NAMESPACE = "quota"
 
 
 
-_OFFSET = 2**32
+_OFFSET = 2L**32
 
 
 class QuotaManager(object):

@@ -43,7 +43,7 @@ def IPAddress(address, version=None):
 
     Args:
         address: A string or integer, the IP address.  Either IPv4 or
-          IPv6 addresses may be supplied; integers less than 2**32 will
+          IPv6 addresses may be supplied; integers less than 2L**32 will
           be considered to be IPv4 by default.
         version: An Integer, 4 or 6. If set, don't try to automatically
           determine what the IP address type is. important for things
@@ -83,7 +83,7 @@ def IPNetwork(address, version=None, strict=False):
 
     Args:
         address: A string or integer, the IP address.  Either IPv4 or
-          IPv6 addresses may be supplied; integers less than 2**32 will
+          IPv6 addresses may be supplied; integers less than 2L**32 will
           be considered to be IPv4 by default.
         version: An Integer, if set, don't try to automatically
           determine what the IP address type is. important for things
@@ -146,7 +146,7 @@ def v6_int_to_packed(address):
     Returns:
         The binary representation of this address.
     """
-    return Bytes(struct.pack('!QQ', address >> 64, address & (2**64 - 1)))
+    return Bytes(struct.pack('!QQ', address >> 64, address & (2L**64 - 1)))
 
 
 def _find_address_range(addresses):
@@ -251,7 +251,7 @@ def summarize_address_range(first, last):
         nbits = _count_righthand_zero_bits(first_int, ip_bits)
         current = None
         while nbits >= 0:
-            addend = 2**nbits - 1
+            addend = 2L**nbits - 1
             current = first_int + addend
             nbits -= 1
             if current <= last_int:
@@ -1015,7 +1015,7 @@ class _BaseV4(object):
     """
 
     # Equivalent to 255.255.255.255 or 32 bits of 1's.
-    _ALL_ONES = (2**IPV4LENGTH) - 1
+    _ALL_ONES = (2L**IPV4LENGTH) - 1
     _DECIMAL_DIGITS = frozenset('0123456789')
 
     def __init__(self, address):
@@ -1387,7 +1387,7 @@ class _BaseV6(object):
 
     """
 
-    _ALL_ONES = (2**IPV6LENGTH) - 1
+    _ALL_ONES = (2L**IPV6LENGTH) - 1
     _HEXTET_COUNT = 8
     _HEX_DIGITS = frozenset('0123456789ABCDEFabcdef')
 

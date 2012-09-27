@@ -117,7 +117,7 @@ def get_xsrf_token():
   """
   entity = _AhAdminXsrfToken_.get_by_key_name(_AhAdminXsrfToken_.XSRF_KEY_NAME)
   if not entity:
-    randints = ['%08x' % (random.randrange(-2**31, 2**31-1) & (2**32-1))
+    randints = ['%08x' % (random.randrange(-2L**31, 2L**31-1) & (2L**32-1))
                 for i in range(6)]
     xsrf_token = '_'.join(randints)
     entity = _AhAdminXsrfToken_(key_name=_AhAdminXsrfToken_.XSRF_KEY_NAME,

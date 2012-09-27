@@ -8,7 +8,7 @@ from django.utils.encoding import smart_str, smart_unicode
 from django.core.files.utils import FileProxyMixin
 
 class File(FileProxyMixin):
-    DEFAULT_CHUNK_SIZE = 64 * 2**10
+    DEFAULT_CHUNK_SIZE = 64 * 2L**10
 
     def __init__(self, file, name=None):
         self.file = file
